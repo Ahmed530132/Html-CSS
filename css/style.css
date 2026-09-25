@@ -401,6 +401,59 @@ body {
     margin-left: 10px;
     color: var(--secondary-color);
 }
+/* JS-driven enhancements */
+.header {
+    transition: box-shadow .3s, background-color .3s;
+}
+.header.scrolled {
+    box-shadow: 0 2px 15px rgba(0,0,0,.1);
+    background-color: #fff;
+}
+.header .links ul li a.active {
+    color: var(--main-color);
+    font-weight: bold;
+}
+.header .links.open .icon span:nth-child(2) {
+    width: 100%;
+}
+.header .links.open ul {
+    display: block;
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+#back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all .3s;
+    z-index: 100;
+}
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.contact .info .link {
+    cursor: pointer;
+}
 /* Footer */
 .footer {
     background-color: var(--secondary-color);
